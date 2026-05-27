@@ -221,12 +221,21 @@ function initSlider(wrapId, trackId, dotsId, images) {
    価格表モーダル開閉
 ============================= */
 function initKakakuModal() {
-  const btn     = document.getElementById('btnKakaku');
-  const overlay = document.getElementById('kakakuOverlay');
-  const sheet   = document.getElementById('kakakuSheet');
+  const btn      = document.getElementById('btnKakaku');
+  const overlay  = document.getElementById('kakakuOverlay');
+  const sheet    = document.getElementById('kakakuSheet');
   const closeBtn = document.getElementById('kakakuClose');
+  const footer   = document.getElementById('fixedFooter');
 
   if (!btn || !overlay || !sheet) return;
+
+  // フッターの高さを取得してボタン位置を設定
+  function positionBtn() {
+    const footerH = footer ? footer.offsetHeight : 60;
+    btn.style.bottom = (footerH + 12) + 'px';
+  }
+  positionBtn();
+  window.addEventListener('resize', positionBtn);
 
   function openModal() {
     overlay.style.display = 'block';
