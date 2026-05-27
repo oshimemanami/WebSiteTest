@@ -145,8 +145,8 @@ body {
    価格表ボタン（丸ボタン）
 ============================= */
 .btn-kakaku {
-  position: fixed;
-  bottom: 72px;
+  position: absolute;
+  top: -40px;
   right: 16px;
   width: 64px;
   height: 64px;
