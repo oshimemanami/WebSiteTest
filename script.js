@@ -218,9 +218,46 @@ function initSlider(wrapId, trackId, dotsId, images) {
 }
 
 /* =============================
+   価格表モーダル開閉
+============================= */
+function initKakakuModal() {
+  const btn     = document.getElementById('btnKakaku');
+  const overlay = document.getElementById('kakakuOverlay');
+  const sheet   = document.getElementById('kakakuSheet');
+  const closeBtn = document.getElementById('kakakuClose');
+
+  if (!btn || !overlay || !sheet) return;
+
+  function openModal() {
+    overlay.style.display = 'block';
+    // 1フレーム後にアニメーション開始
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        overlay.classList.add('is-active');
+        sheet.classList.add('is-active');
+      });
+    });
+  }
+
+  function closeModal() {
+    overlay.classList.remove('is-active');
+    sheet.classList.remove('is-active');
+    // トランジション終了後に非表示
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 400);
+  }
+
+  btn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+}
+
+/* =============================
    DOM読み込み後に初期化
 ============================= */
 document.addEventListener('DOMContentLoaded', () => {
   initSlider('sliderA', 'sliderA-track', 'sliderA-dots', sliderAImages);
   initSlider('sliderB', 'sliderB-track', 'sliderB-dots', sliderBImages);
+  initKakakuModal();
 });
