@@ -230,6 +230,7 @@ function initKakakuModal() {
 
   function openModal() {
     overlay.style.display = 'block';
+    document.body.classList.add('kakaku-open');
     // 1フレーム後にアニメーション開始
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
@@ -242,6 +243,7 @@ function initKakakuModal() {
   function closeModal() {
     overlay.classList.remove('is-active');
     sheet.classList.remove('is-active');
+    document.body.classList.remove('kakaku-open');
     // トランジション終了後に非表示
     setTimeout(() => {
       overlay.style.display = 'none';
