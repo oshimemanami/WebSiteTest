@@ -245,10 +245,10 @@ function initFooterNav() {
     const h = footerImg.offsetHeight;
     const q = Math.floor(w / 4); // 4分割
 
-    // 各エリアの座標（左から：3つのコース、仕上がりタイプ、事例紹介、お問い合わせ）
-    document.getElementById('areaCorner').coords = `${q * 0},0,${q * 1},${h}`;
-    document.getElementById('areaFinish').coords = `${q * 1},0,${q * 2},${h}`;
-    document.getElementById('areaCase').coords   = `${q * 2},0,${q * 3},${h}`;
+    document.getElementById('areaCorner').coords  = `${q * 0},0,${q * 1},${h}`;
+    document.getElementById('areaFinish').coords  = `${q * 1},0,${q * 2},${h}`;
+    document.getElementById('areaCase').coords    = `${q * 2},0,${q * 3},${h}`;
+    document.getElementById('areaContact').coords = `${q * 3},0,${q * 4},${h}`;
   }
 
   if (footerImg.complete) setupMap();

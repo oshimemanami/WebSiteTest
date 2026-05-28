@@ -90,9 +90,9 @@ body {
 
 .meta-gif-overlay {
   position: absolute;
-  left: 8%;
-  top: 660px;
-  width: 84%;
+  left: 15%;
+  top: 370px;
+  width: 85%;
   pointer-events: none;
 }
 
@@ -120,15 +120,22 @@ body {
   right: 16px;
   top: 50%;
   transform: translateY(-50%) rotate(0deg);
+  transform-origin: center center;
   font-size: 22px;
   color: #555;
   transition: transform 0.3s ease;
   pointer-events: none;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
 }
 
 .faq-arrow.is-open {
   transform: translateY(-50%) rotate(180deg);
+  transform-origin: center center;
 }
 
 .faq-answer {
