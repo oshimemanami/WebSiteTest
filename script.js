@@ -223,12 +223,18 @@ function initFaqAccordion() {
   const question = document.getElementById('faqQuestion');
   const answer   = document.getElementById('faqAnswer');
   const arrow    = document.getElementById('faqArrow');
+  const qImg     = document.getElementById('meta13aImg');
   if (!question || !answer) return;
 
   question.addEventListener('click', () => {
     const isOpen = answer.classList.contains('is-open');
     answer.classList.toggle('is-open', !isOpen);
     if (arrow) arrow.classList.toggle('is-open', !isOpen);
+    // タップ前: sp-250 / タップ後: sp-10
+    if (qImg) {
+      qImg.classList.toggle('sp-250', isOpen);   // 閉じる→sp-250に戻す
+      qImg.classList.toggle('sp-10',  !isOpen);  // 開く→sp-10に
+    }
   });
 }
 

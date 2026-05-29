@@ -46,7 +46,7 @@
   <!-- =============================
        スライダー２
   ============================= -->
-  <section class="section-slider slider-b sp-100">
+  <section class="section-slider slider-b sp-100 mt-2">
     <div class="slider-outer">
       <div class="slider-wrap" id="sliderB">
         <div class="slider-track" id="sliderB-track"></div>
@@ -119,7 +119,7 @@
     <img src="images/meta_13.png" alt="" class="meta-img sp-10">
     <div class="faq-accordion" id="faqAccordion">
       <div class="faq-question" id="faqQuestion">
-        <img src="images/meta_13a.png" alt="" class="meta-img faq-q-img sp-250">
+        <img src="images/meta_13a.png" alt="" class="meta-img faq-q-img sp-250" id="meta13aImg">
         <span class="faq-arrow" id="faqArrow">&#8964;</span>
       </div>
       <div class="faq-answer" id="faqAnswer">
@@ -142,13 +142,15 @@
   </section>
 
   <!-- =============================
-       meta_15b・meta_15・meta_15a
+       meta_15b（meta_15に重ねて表示）・meta_15・meta_15a
   ============================= -->
   <section class="section-meta">
-    <a href="https://www.instagram.com/okuttephotobook/" target="_blank" class="meta-link">
-      <img src="images/meta_15b.png" alt="" class="meta-img sp-100">
-    </a>
-    <img src="images/meta_15.png" alt="" class="meta-img sp-100">
+    <div class="meta-15-wrap meta-05a-narrow sp-100">
+      <img src="images/meta_15.png" alt="" class="meta-img">
+      <a href="https://www.instagram.com/okuttephotobook/" target="_blank" class="meta-15b-link">
+        <img src="images/meta_15b.png" alt="" class="meta-15b-img">
+      </a>
+    </div>
     <!-- meta_15a：リンク付きフッターエリア（HTMLで再現） -->
     <div class="footer-links">
       <a href="https://okutte.jp/company.html" target="_blank" class="footer-link-item">会社概要</a>
@@ -201,5 +203,6 @@
   </div>
 
   <script src="script.js"></script>
+</body>
 </body>
 </html>

@@ -99,8 +99,31 @@ body {
 .meta-gif-wrap.sp-250, .faq-accordion.sp-250 { margin-bottom: var(--space-250); }
 
 /* =============================
-   meta_05a 幅を横並びボタンに合わせて縮小
+   meta_15 重ね表示
 ============================= */
+.meta-15-wrap {
+  position: relative;
+  width: calc(100% - 24px);
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.meta-15b-link {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  display: block;
+}
+
+.meta-15b-img {
+  width: 100%;
+  display: block;
+}
+
+/* section-metaにもsp-*を適用 */
+.section-meta.sp-250 { margin-top: var(--space-250); }
 .meta-05a-narrow {
   width: calc(100% - 24px);
   margin-left: 12px;
@@ -111,7 +134,7 @@ body {
    フッターリンクエリア（meta_15a代替）
 ============================= */
 .footer-links {
-  background: #c8002d;
+  background: #e52344;
   padding: 40px 20px 30px;
   text-align: center;
 }
@@ -122,12 +145,14 @@ body {
   text-decoration: none;
   font-size: 15px;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border: none;
+  outline: none;
   letter-spacing: 0.05em;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .footer-link-item:first-child {
-  border-top: 1px solid rgba(255,255,255,0.2);
+  border: none;
 }
 
 .footer-link-item:active {
@@ -144,7 +169,8 @@ body {
 
 .footer-copyright {
   margin-top: 24px;
-  color: rgba(255,255,255,0.8);
+  color: #fff;
+  opacity: 1;
   font-size: 12px;
   letter-spacing: 0.03em;
 }
@@ -259,6 +285,11 @@ body {
 .section-hero + .section-slider,
 .section-meta + .section-slider {
   margin-top: 0;
+}
+
+.section-meta.mt-2 + .section-slider,
+.section-slider.mt-2 {
+  margin-top: var(--space-2);
 }
 
 /* 枠線付きアウター */
