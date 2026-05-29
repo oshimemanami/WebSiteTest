@@ -113,7 +113,7 @@ body {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 182%;
+  width: 50%;
   display: block;
 }
 
@@ -206,25 +206,25 @@ body {
 
 .meta-gif-overlay {
   position: absolute;
-  left: 8.5%;
-  top: 55%;
-  width: 83%;
+  left: 8.9%;
+  top: 17.7%;
+  width: 82%;
   pointer-events: none;
 }
 
 .meta-gif-overlay-2 {
   position: absolute;
-  left: 8.5%;
-  top: calc(55% + 100%);
-  width: 83%;
+  left: 8.9%;
+  top: 17.7%;
+  width: 82%;
   pointer-events: none;
 }
 
 .meta-gif-overlay-3 {
   position: absolute;
-  left: 8.5%;
-  top: calc(55% + 200%);
-  width: 83%;
+  left: 8.9%;
+  top: 17.7%;
+  width: 82%;
   pointer-events: none;
 }
 
@@ -264,7 +264,7 @@ body {
   position: absolute;
   right: 12px;
   top: 50%;
-  width: 17%;
+  width: 3%;
   height: auto;
   transform: translateY(-50%) rotate(0deg);
   transform-origin: center center;
