@@ -113,7 +113,7 @@ body {
   bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 50%;
+  width: 182%;
   display: block;
 }
 
@@ -212,6 +212,22 @@ body {
   pointer-events: none;
 }
 
+.meta-gif-overlay-2 {
+  position: absolute;
+  left: 8.5%;
+  top: calc(55% + 100%);
+  width: 83%;
+  pointer-events: none;
+}
+
+.meta-gif-overlay-3 {
+  position: absolute;
+  left: 8.5%;
+  top: calc(55% + 200%);
+  width: 83%;
+  pointer-events: none;
+}
+
 /* =============================
    FAQ アコーディオン（meta_13a/b）
 ============================= */
@@ -227,42 +243,29 @@ body {
 }
 
 .faq-q-img {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   display: block;
 }
 
-.faq-arrow {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%) rotate(0deg);
-  transform-origin: center center;
-  font-size: 22px;
-  color: #555;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-  line-height: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
+.faq-question {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
-.faq-arrow.is-open {
-  transform: translateY(-50%) rotate(180deg);
-  transform-origin: center center;
+/* タップ時の水色枠を消す */
+.faq-question * {
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* meta_17 画像矢印 */
 .faq-arrow-img {
   position: absolute;
   right: 12px;
   top: 50%;
-  width: 28px;
-  height: 28px;
+  width: 17%;
+  height: auto;
   transform: translateY(-50%) rotate(0deg);
   transform-origin: center center;
   transition: transform 0.35s ease;
@@ -275,16 +278,19 @@ body {
   transform: translateY(-50%) rotate(180deg);
 }
 
+/* 開く：フェードイン＋スライドダウン */
 .faq-answer {
   overflow: hidden;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.45s ease, opacity 0.4s ease;
+  transform: translateY(-12px);
+  transition: max-height 0.45s ease, opacity 0.4s ease, transform 0.4s ease;
 }
 
 .faq-answer.is-open {
   max-height: 1000px;
   opacity: 1;
+  transform: translateY(0);
 }
 
 /* =============================
