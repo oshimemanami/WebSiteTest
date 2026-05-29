@@ -228,12 +228,17 @@ function initFaqAccordion() {
 
   question.addEventListener('click', () => {
     const isOpen = answer.classList.contains('is-open');
-    answer.classList.toggle('is-open', !isOpen);
-    if (arrow) arrow.classList.toggle('is-open', !isOpen);
-    // タップ前: sp-250 / タップ後: sp-10
-    if (qImg) {
-      qImg.classList.toggle('sp-250', isOpen);   // 閉じる→sp-250に戻す
-      qImg.classList.toggle('sp-10',  !isOpen);  // 開く→sp-10に
+
+    if (!isOpen) {
+      // 開く
+      answer.classList.add('is-open');
+      if (arrow) arrow.classList.add('is-open');
+      if (qImg) { qImg.classList.remove('sp-150'); qImg.classList.add('sp-10'); }
+    } else {
+      // 閉じる
+      answer.classList.remove('is-open');
+      if (arrow) arrow.classList.remove('is-open');
+      if (qImg) { qImg.classList.remove('sp-10'); qImg.classList.add('sp-150'); }
     }
   });
 }
