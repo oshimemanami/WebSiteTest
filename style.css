@@ -123,6 +123,11 @@ body {
   display: block;
 }
 
+.meta-15b-img {
+  width: 100%;
+  display: block;
+}
+
 /* section-metaにもsp-*を適用 */
 .section-meta.sp-150 { margin-top: var(--space-150); }
 .meta-05a-narrow {
@@ -279,20 +284,20 @@ body {
   transform: translateY(-50%) rotate(180deg);
 }
 
-/* 開く：上から展開・閉じる：上へ吸い込まれる */
+/* 開く：上からスライドイン・閉じる：上へ戻る */
 .faq-answer {
   overflow: hidden;
-  opacity: 0;
-  transform: scaleY(0);
-  transform-origin: top center;
   max-height: 0;
-  transition: opacity 0.35s ease, transform 0.35s ease;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.01s 0.35s;
 }
 
 .faq-answer.is-open {
+  max-height: 2000px;
   opacity: 1;
-  transform: scaleY(1);
-  max-height: 1000px;
+  transform: translateY(0);
+  transition: opacity 0.35s ease, transform 0.35s ease, max-height 0.01s;
 }
 
 /* =============================
